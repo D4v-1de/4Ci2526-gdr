@@ -24,7 +24,7 @@ public class App {
         legolas.aggiungiEquip(armor);
         legolas.aggiungiEquip(elmo);
 
-        int danno = aragorn.attacca(legolas, 90);
+        int danno = aragorn.attaccaMischia(legolas, 90);
         System.out.printf("Inflitti %d danni\n", danno);
         team.salutaTutti();
     }
