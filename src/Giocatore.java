@@ -21,7 +21,7 @@ public abstract class Giocatore {
         this.inventario = new ArrayList<>();
     }
 
-    public int attaccaMischia(Giocatore target, int danno) {
+    public int attacca(Giocatore target, int danno) {
 
         boolean haArma = false;
 
@@ -84,6 +84,8 @@ public abstract class Giocatore {
         target.setHp(target.getHp() - dannoFinale); 
         return dannoFinale;
     }
+
+
 
     // calcola il peso attuale portato dal giocatore
     private void aggiornaPeso() {
