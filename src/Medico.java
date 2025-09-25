@@ -31,6 +31,17 @@ public class Medico extends Giocatore {
         return 0;
     }
 
+    @Override
+    public boolean aggiungiEquip(Equip nuovo) {
+
+        //un medico non puo' usare armi
+        if (nuovo.getTipo() == TipoEquip.ArmaRanged || nuovo.getTipo() == TipoEquip.ArmaMelee) {
+            return false;
+        }
+
+        return super.aggiungiEquip(nuovo);
+    }
+
     public boolean rianima(Giocatore target) {
         // se vivo non rianimo
         if (!target.isMorto())
