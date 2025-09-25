@@ -18,7 +18,7 @@ public class App {
         aragorn.aggiungiEquip(spada);
         System.out.println("Peso inventario: " + aragorn.getPeso()); 
 
-        // TODO
+
         Equip elmo = new Equip("Elmo", 5, TipoEquip.Armatura);
         Equip armor = new Equip("Armatura", 30, TipoEquip.Armatura);
         legolas.aggiungiEquip(armor);

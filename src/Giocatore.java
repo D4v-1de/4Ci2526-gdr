@@ -53,39 +53,6 @@ public abstract class Giocatore {
         return dannoFinale;
     }
 
-    public int attaccaRanged(Giocatore target, int danno) {
-
-        boolean haArma = false;
-
-        // cerco nell'inventario se ho almeno un'arma ranged
-        for (Equip e : inventario) {
-
-            if (e.getTipo() == TipoEquip.ArmaRanged) {
-                haArma = true;
-                break;
-            }
-        }
-
-        // controllo l'istanza del mio oggetto e attacco solo se ho l'arma
-        if (!(this instanceof Arciere) || !haArma) {
-            return 0;
-        }
-
-        // verifico se il target ha armature e le conto
-        int armature = 0;
-        for (Equip e : target.getInventario()) {
-            
-            if (e.getTipo() == TipoEquip.Armatura)
-                armature++;
-        }
-
-        // modifico i puntivita del target
-        int dannoFinale = danno / (armature + 1);
-        target.setHp(target.getHp() - dannoFinale); 
-        return dannoFinale;
-    }
-
-
 
     // calcola il peso attuale portato dal giocatore
     private void aggiornaPeso() {
@@ -112,6 +79,10 @@ public abstract class Giocatore {
 
         return true;
     }
+
+    public abstract void ricaricaMana();
+    
+    
 
     public boolean isMorto() {
 
